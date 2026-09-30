@@ -1,9 +1,9 @@
 // APIs
-// API 1: "https://jsonplaceholder.typicode.com/users"
-// API 2: "https://jsonplaceholder.typicode.com/posts?userId=:id"
+// API 1: "https://dummyjson.com/users"
+// API 2: "https://dummyjson.com/users/posts?userId=:id"
 
 async function main() {
-  const users = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await fetch("https://dummyjson.com/users");
   const usersData = await users.json();
   const userListEl = document.querySelector(".user-list");
 
@@ -13,7 +13,8 @@ async function main() {
 main();
 
 function showUserPosts(id) {
-    localStorage.setItem("id", id);
+    localStorage.setItem("id", id)
+    console.log(window.location);
     window.location.href = `${window.location.origin}/user.html`
 
 }
